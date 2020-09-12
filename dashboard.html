@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('         {{ url_for('static', filename='img/stuff.gif') }}       ')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+              <div class="page-heading">
+                <div class="typewriter">
+                    <h1>Stuff's here </h1>
+                </div>
+                <style>
+                  * GLOBAL STYLES */
+body {
+  background: #333;
+  padding-top: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(50, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: yellow }
+}
+   </style>
+          </div>
+        </div>
+      </div>
+    </header>
+<hr>
+
+    <!-- Main Content -->
+    <header class="masthead" style="background-image: url('         {{ url_for('static', filename='img/blue.png') }}       ')">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h1>Add a Post</h1>
+             <a href = "/edit/0"><button class = "btn btn-primary" style="background-color:#747d7c;">add a new post</button></a>
+            <a href = "/logout"><button class = "btn btn-primary" style="background-color:#747d7c;">Log out</button></a>
+            <hr>
+            <h1>Upload your File</h1>
+
+
+            <form action="/uploader" method="post" enctype="multipart/form-data">
+                <input type = "file" name="file1">
+                <button type="submit" class = "btn btn-primary" style="background-color:#747d7c;">submit</button>
+
+
+
+            </form>
+
+                <hr>
+            <h1>Edit your Posts</h1>
+
+
+            <table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Title</th>
+        <th>Date</th>
+          <th>Edit</th>
+          <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    {%for post in posts %}
+
+      <tr>
+        <td>{{post.sno}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.date}}</td>
+          <td><a href="/edit/{{post.sno}}"><button class = "btn btn-primary" style="background-color:#747d7c;">Edit</button></a></td>
+          <td><a href="/delete/{{post.sno}}"><button class = "btn btn-primary" style="background-color:#747d7c;">Delete</button></a></td>
+      </tr>
+
+    {% endfor %}
+
+
+
+
+    </tbody>
+  </table>
+
+
+
+{% endblock %}
+

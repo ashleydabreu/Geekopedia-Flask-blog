@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('         {{ url_for('static', filename='img/about2.gif') }}       ')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <div class="typewriter">
+  <h1>All 'bout me </h1>
+</div>
+                <style>
+                  * GLOBAL STYLES */
+body {
+  background: #333;
+  padding-top: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(50, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+   </style>
+              <span class="subheading"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+          <p style="color:white;">So lets talk about me . I'am a professional Procrastinator and a technophile . I like to learn and implement technologies that suit my interest . I have an interest in system administration. And would like to pursue it as my career</p>
+            <p style="color:white;">I personally feel everyone has the right to learn new trending technologies . coz in this day and age computer just dont mean word and excel but wordpess and tableau</p>
+          <p style="color:white;">Thats my motivation to build this website so that evrybody has access to knowledge of broader domains of IT . So do give it a read and message me if you have any suggestions, or compliments . I would love to read them . </p>
+            <p style="color:white;">I would love to connect with you on <a href="https://www.facebook.com/ashley.dabreu.3" target="_blank" style="color:orange;">Facebook</a>||<a href="https://www.linkedin.com/in/ashley-d-abreo-001b80172/" target="_blank" style="color:orange;">Linkedin</a>||<a href="https://www.instagram.com/ashley.dabreo/?hl=en" target="_blank" style="color:orange;">Instagram</a>||<a href="https://twitter.com/AshleyAbreo" target="_blank" style="color:orange;">Twitter</a></p>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}
+
+
